@@ -2,11 +2,12 @@
 from django.shortcuts import render
 from .models import Googs
 
+
 # Create your views here.
 
 
 def index(request):
-    template_name = 'goods_List.html'
+    template_name = 'goods_list.html'
     goods_list = Googs.objects.all()
     goods_str = []
     for i in goods_list:
