@@ -54,10 +54,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'test_prj.urls'
 
+DIR_TEMPLATES = BASE_DIR / 'templates'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [DIR_TEMPLATES],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,10 +123,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'templates',
-]
+STATICFILES_DIRS = (
+    'static',
+)
+# STATIC_DIRS = [
+#     BASE_DIR / 'templates',
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

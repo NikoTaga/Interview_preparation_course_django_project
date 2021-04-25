@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{table_title}}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <button type="button" onclick="window.location.href = '{% url 'add' %}';">Добавить через контроллер-функцию</button><br>
+    <button type="button" onclick="window.location.href = '{% url 'add_class' %}';">Добавить через контроллер-класс</button><br>
+
     <table>
         <tr>
-        <th>Название</th><th>Цена</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Производитель</th>
         </tr>
         {% for object in goods %}
         <tr>
-        <td>{{ object.title }}</td><td>{{ object.price }}</td>
+            <td>{{ object.title }}</td>
+            <td>{{ object.price }}</td>
+            <td>{{ object.vendor }}</td>
         </tr>
         {% endfor %}
     </table>
-</body>
-</html>
+{% endblock %}

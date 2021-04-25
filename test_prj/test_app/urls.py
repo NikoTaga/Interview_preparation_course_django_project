@@ -18,6 +18,6 @@ from test_app.views import index, add, Add
 
 urlpatterns = [
     path('', index),
-    path('add/', add),
-    path('add-class/', Add.as_view())
+    path('add/', add, name='add'),
+    path('add-class/', Add.as_view(), name='add_class')
 ]
