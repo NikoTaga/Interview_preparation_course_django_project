@@ -1,6 +1,6 @@
 
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.template.loader import render_to_string
 from django.views.generic.edit import CreateView
 from .models import Googs
