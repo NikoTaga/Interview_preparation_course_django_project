@@ -2,21 +2,29 @@
 {% load static %}
 
 {% block content %}
-    <button type="button" onclick="window.location.href = '{% url 'add' %}';">Добавить через контроллер-функцию</button><br>
-    <button type="button" onclick="window.location.href = '{% url 'add_class' %}';">Добавить через контроллер-класс</button><br>
+    <button type="button" class="js-create-good" data-url="{% url 'add' %}"><span>Добавить товар</span></button><br>
+    <button id="ajaxButton">Загрузить AJAX</button>
 
-    <table>
+    <table id="test_table" class="result">
         <tr>
             <th>Название</th>
             <th>Цена</th>
             <th>Производитель</th>
         </tr>
-        {% for object in goods %}
-        <tr>
-            <td>{{ object.title }}</td>
-            <td>{{ object.price }}</td>
-            <td>{{ object.vendor }}</td>
-        </tr>
-        {% endfor %}
+       {% include 'include/partial_goods_list.html' %}
     </table>
+
+    <div class="modal-fade" id="modal-good">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block additional_js %}
+    <script src="{% static 'js/add_goods.js' %}"></script>
+    <script src="{% static 'js/11.js' %}"></script>
 {% endblock %}

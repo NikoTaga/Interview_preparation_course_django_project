@@ -1,0 +1,21 @@
+
+
+
+
+
+{#<div>#}
+{#    {% for object in goods %}#}
+{#        <div>#}
+{#            <p>{{ object.title }}</p>#}
+{#            <p>{{ object.price }}</p>#}
+{#            <p>{{ object.vendor }}</p>#}
+{#        </div>#}
+{#    {% endfor %}#}
+{#</div>#}
+{% for object in goods %}
+        <tr id="goods-list">
+            <td>{{ object.title }}</td>
+            <td>{{ object.price }}</td>
+            <td>{{ object.vendor }}</td>
+        </tr>
+        {% endfor %}
